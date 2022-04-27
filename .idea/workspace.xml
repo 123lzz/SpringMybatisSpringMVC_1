@@ -9,13 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f53c7883-0b8f-4516-9172-f9a80a861583" name="Default Changelist" comment="delete">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addgoods.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/goods_info.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/goods_list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/listall.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/success.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/updategoods.jsp" beforeDir="false" />
+    <list default="true" id="f53c7883-0b8f-4516-9172-f9a80a861583" name="Default Changelist" comment="delete 7 jps">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand/ssm/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand/ssm/controller/TestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +175,7 @@
       <workItem from="1639377486380" duration="3235000" />
       <workItem from="1639561461183" duration="7590000" />
       <workItem from="1640056915267" duration="2073000" />
-      <workItem from="1651068174009" duration="909000" />
+      <workItem from="1651068174009" duration="1702000" />
     </task>
     <task id="LOCAL-00001" summary="新建项目">
       <created>1651068545545</created>
@@ -195,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651068896132</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="delete 7 jps">
+      <created>1651069128442</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651069128442</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,9 +207,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新建项目" />
     <MESSAGE value="delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete" />
+    <MESSAGE value="delete 7 jps" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete 7 jps" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1651069085449">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1651069085449" />
     <state x="766" y="477" key="Github.CreateGistDialog" timestamp="1651068216108">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -215,5 +223,13 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="772" y="455" key="Github.ShareDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1651068702545" />
+    <state x="560" y="291" key="Vcs.Push.Dialog.v2" timestamp="1651070091765">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="560" y="291" key="Vcs.Push.Dialog.v2/0.23.1920.1057@0.23.1920.1057" timestamp="1651070091765" />
+    <state x="757" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1651069052068">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="757" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1057@0.23.1920.1057" timestamp="1651069052068" />
   </component>
 </project>

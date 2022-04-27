@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class TestController {
     private int i = 0;
+    private int k = 1;
 
     // 拦截器测试
     @RequestMapping("/hello")
