@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace指用户自定义的命名空间。 -->
+<mapper namespace="com.hand.ssm.dao.EmployeeDao">
+
+	<!-- 根据 emp_no 查询 Employee，返回resultMap -->
+	<select id="selectEmployeeById" parameterType="String"
+		resultMap="employeeMap">
+		SELECT * from employee_basic where emp_no = #{emp_no}
+	</select>
+
+	<!-- 映射 Employee 对象的 resultMap -->
+	<resultMap type="com.hand.ssm.dto.Employee"
+		id="employeeMap">
+		<id property="emp_no" column="emp_no" />
+		<result property="emp_name" column="emp_name" />
+		<result property="dept_id" column="dept_id" />
+		<result property="emp_gender" column="emp_gender" />
+		<result property="emp_email" column="emp_email" />
+
+		<result property="emp_nation" column="emp_nation" />
+		<result property="emp_marriage" column="emp_marriage" />
+		<result property="emp_health" column="emp_health" />
+		<result property="emp_zzmm" column="emp_zzmm" />
+
+		<result property="emp_blood" column="emp_blood" />
+		<result property="emp_state" column="emp_state" />
+
+	</resultMap>
+
+	<!-- if -->
+	<select id="selectEmployeeByDeptId" resultMap="employeeMap">
+		SELECT * FROM employee_basic WHERE emp_health = '良好'
+		<!-- 可选条件，如果传进来的参数有 dept_id 属性，则加上 dept_id 查询条件 -->
+		<if test="dept_id != null ">
+			and dept_id = #{dept_id}
+		</if>
+	</select>
+
+	<!-- if -->
+	<select id="selectEmployeeByMultiple" resultMap="employeeMap">
+		SELECT * FROM employee_basic WHERE emp_health = '良好'
+		<!-- 也可以有多个查询条件，譬如可根据民族、血型以及已婚未婚等条件来查询员工 -->
+		<if
+			test="emp_nation != null and emp_blood != null and emp_marriage != null">
+			and emp_nation = #{emp_nation} and emp_blood = #{emp_blood} and
+			emp_marriage = #{emp_marriage}
+		</if>
+	</select>
+
+	<!-- 使用 choose（when、otherwise） 查找员工 -->
+	<select id="findEmployee_1" resultMap="employeeMap">
+		SELECT * FROM employee_basic WHERE emp_health = '良好'
+		<!-- 如果传入了dept_id，就根据dept_id查询，没有传入dept_id 就根据emp_marriage和emp_gender查询，否则查询emp_zzmm是党员的员工 -->
+		<choose>
+			<when test="dept_id != null">
+				and dept_id = #{dept_id}
+			</when>
+			<when test="emp_marriage != null and emp_gender != null">
+				and emp_marriage = #{emp_marriage} and emp_gender =
+				#{emp_gender}
+			</when>
+			<otherwise>
+				and emp_zzmm = '党员'
+			</otherwise>
+		</choose>
+	</select>
+
+	<!-- 使用where -->
+	<select id="findEmployee_2" resultMap="employeeMap">
+		SELECT * FROM employee_basic
+		<where>
+			<if test="emp_health != null ">
+				emp_health = #{emp_health}
+			</if>
+			<if test="dept_id != null ">
+				and dept_id = #{dept_id}
+			</if>
+			<if test="emp_marriage != null and emp_gender != null">
+				and emp_marriage = #{emp_marriage} and emp_gender =
+				#{emp_gender}
+			</if>
+		</where>
+	</select>
+
+
+	<!-- 动态更新语句中使用 set -->
+	<update id="updateEmployee" parameterType="com.hand.ssm.dto.Employee">
+		update employee_basic
+		<set>
+			<if test="emp_name != null">emp_name=#{emp_name},</if>
+			<if test="dept_id != null">dept_id=#{dept_id},</if>
+			<if test="emp_gender != null">emp_gender=#{emp_gender},</if>
+			<if test="emp_email != null">emp_email=#{emp_email},</if>
+			<if test="emp_nation != null">emp_nation=#{emp_nation},</if>
+			<if test="emp_marriage != null">emp_marriage=#{emp_marriage},</if>
+			<if test="emp_health != null">emp_health=#{emp_health},</if>
+			<if test="emp_zzmm != null">emp_zzmm=#{emp_zzmm},</if>
+			<if test="emp_blood != null">emp_blood=#{emp_blood},</if>
+			<if test="emp_state != null">emp_state=#{emp_state}</if>
+		</set>
+		where emp_no=#{emp_no}
+	</update>
+
+	<!-- 使用 foreach -->
+	<select id="findEmployee_3" resultMap="employeeMap">
+		SELECT * FROM employee_basic WHERE emp_no in
+		<foreach item="item" index="index" collection="list" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<!-- 使用 bind -->
+	<select id="findEmployee_4" resultMap="employeeMap">
+		<bind name="employeeNameLike" value="'%' + emp_name + '%'" />
+		SELECT * FROM employee_basic WHERE emp_name LIKE #{employeeNameLike}
+	</select>
+
+	<!-- 使用 trim -->
+	<select id="findEmployee_5" resultMap="employeeMap">
+		SELECT * FROM employee_basic
+		<trim prefix="where" prefixOverrides="and ">
+			<if test="dept_id != null ">
+				and dept_id = #{dept_id}
+			</if>
+			<if test="emp_marriage != null and emp_gender != null">
+				and emp_marriage = #{emp_marriage} and emp_gender =
+				#{emp_gender}
+			</if>
+		</trim>
+	</select>
+
+</mapper>

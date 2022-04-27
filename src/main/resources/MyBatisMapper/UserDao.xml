@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hand.ssm.dao.UserDao">
+	<select id="selectById" parameterType="com.hand.ssm.dto.User" resultType="com.hand.ssm.dto.User">
+		select * from login where user_id = #{id}
+	</select>
+	
+	<!-- select all -->
+	<resultMap id="UserResultMap"  type="com.hand.ssm.dto.User">
+		<id property="id" column="id" />
+		<result property="pwd" column="pwd" />
+		<result property="phone" column="phone" />
+	</resultMap>
+	
+	<resultMap id="UserResultMap2"  type="com.hand.ssm.dto.User">
+		<id property="id" column="id" />
+		<result property="pwd" column="pwd" />
+	</resultMap>
+    
+    <select id="selectByIdAndPwd" parameterType="com.hand.ssm.dto.User" resultMap="UserResultMap2">
+ 		select * from login 
+ 		where user_id = #{id} and user_pwd = #{pwd}
+ 	</select>
+ 	
+ 	<select id="selectAll" resultMap="UserResultMap">
+		select * from login		
+	</select> 
+ 	
+</mapper>
