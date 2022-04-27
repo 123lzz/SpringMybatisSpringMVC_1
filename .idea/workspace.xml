@@ -9,8 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f53c7883-0b8f-4516-9172-f9a80a861583" name="Default Changelist" comment="新建项目">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f53c7883-0b8f-4516-9172-f9a80a861583" name="Default Changelist" comment="delete">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/addgoods.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/goods_info.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/goods_list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/listall.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/success.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/updategoods.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +179,7 @@
       <workItem from="1639377486380" duration="3235000" />
       <workItem from="1639561461183" duration="7590000" />
       <workItem from="1640056915267" duration="2073000" />
-      <workItem from="1651068174009" duration="591000" />
+      <workItem from="1651068174009" duration="909000" />
     </task>
     <task id="LOCAL-00001" summary="新建项目">
       <created>1651068545545</created>
@@ -183,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651068545546</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="delete">
+      <created>1651068896132</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651068896132</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +203,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新建项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="新建项目" />
+    <MESSAGE value="delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete" />
   </component>
   <component name="WindowStateProjectService">
     <state x="766" y="477" key="Github.CreateGistDialog" timestamp="1651068216108">
